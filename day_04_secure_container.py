@@ -6,9 +6,7 @@ def part_1(data):
     start, stop = map(int, data.split("-"))
     for i in range(start, stop):
         string = str(i)
-        if "".join(sorted(string)) != string:
-            continue
-        if any(v > 1 for v in Counter(string).values()):
+        if list(string) == sorted(string) and any(v > 1 for v in Counter(string).values()):
             count += 1
     return count
 
@@ -18,9 +16,7 @@ def part_2(data):
     start, stop = map(int, data.split("-"))
     for i in range(start, stop):
         string = str(i)
-        if "".join(sorted(string)) != string:
-            continue
-        if 2 in Counter(string).values():
+        if list(string) == sorted(string) and 2 in Counter(string).values():
             count += 1
     return count
 
