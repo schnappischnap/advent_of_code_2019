@@ -1,7 +1,12 @@
+from collections import defaultdict
+
+
 class Intcode:
     def __init__(self, data, value=1):
+        self.prog = defaultdict(int)
+        for i, j in enumerate(map(int, data.split(","))):
+            self.prog[i] = j
         self.value = value
-        self.prog = list(map(int, data.split(",")))+[0]*10000
         self.pos = 0
         self.rel_base = 0
         self.output = None
