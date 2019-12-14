@@ -80,7 +80,7 @@ def part_2(data):
     prog = Intcode(data)
     prog.prog[0] = 2
     prog_iter = iter(prog.run())
-    
+
     while True:
         try:
             x = next(prog_iter)
