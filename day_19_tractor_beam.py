@@ -87,15 +87,10 @@ def part_1(data):
 
 
 def part_2(data):
-    x, y = 71, 58  # arbitrary point inside beam
-    while True:
-        while inside_beam(data, x, y):
-            y += 1
+    x = 0
+    for y in range(100, 100000):
         while not inside_beam(data, x, y):
             x += 1
-        while inside_beam(data, x, y+1):
-            y += 1
-
         if inside_beam(data, x+99, y-99):
             return 10000*x + (y-99)
 
